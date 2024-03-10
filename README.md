@@ -1,54 +1,47 @@
-# Student Management System
+# Car Management System Readme
 
-This is a simple console-based Student Management System implemented in C. It allows you to perform various operations such as adding, deleting, and displaying student records. The system also supports reading and writing student information to a file for persistent storage.
+## Overview
+This Java program, named CarManager, serves as a simple car management system. It allows users to perform various operations related to brands and cars, such as listing, adding, searching, updating, and saving data to files.
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Usage](#usage)
-4. [Compilation](#compilation)
-5. [File Handling](#file-handling)
-6. [License](#license)
+## How to Use
 
-## Introduction
+### 1. Setup
+Before running the program, make sure to update the file paths for the car and brand data files in the `CarManager` class.
 
-The Student Management System is designed to manage and manipulate student records efficiently. It provides a menu-driven interface with options to perform different operations like adding students, deleting students, printing the student list, saving to a file, and exiting the program.
-
-## Features
-
-- **Add Students:** Allows you to input information for multiple students and adds them to the system.
-- **Delete Students:** Enables you to delete a student by providing their ID.
-- **Print Student List:** Displays the details of all students in a tabular format.
-- **Save to File:** Writes the student information to a specified file.
-- **Read from File:** Reads student information from a specified file.
-- **Exit:** Terminates the program after providing an option to save the data.
-
-## Usage
-
-1. Run the program.
-2. Choose options from the menu to perform different operations.
-3. For file operations, enter the file name or address when prompted.
-4. Follow the on-screen instructions to interact with the system.
-
-## Compilation
-
-To compile the program, use a C compiler such as `gcc`:
-
-```bash
-gcc student_management_system.c -o student_management_system
+```java
+String fileCarsName = "path/to/cars.txt";
+String fileBrandsName = "path/to/brands.txt";
 ```
 
-Execute the compiled program:
+### 2. Menu Options
+The program provides the following menu options:
 
-```bash
-./student_management_system
-```
+1. **List all brands**
+2. **Add a new brand**
+3. **Search a brand based on its ID**
+4. **Update a brand**
+5. **Save brands to the file, named brands.txt**
+6. **List all cars in ascending order of brand names**
+7. **List cars based on a part of an input brand name**
+8. **Add a car**
+9. **Remove a car based on its ID**
+10. **Update a car based on its ID**
+11. **Save cars to file, named cars.txt**
 
-## File Handling
+### 3. Running the Program
+Execute the `main` method in the `CarManager` class. The program will display the menu, and you can choose options by entering the corresponding numbers.
 
-- **Save to File:** Saves the student information to a specified file. The file name must end with ".txt".
-- **Read from File:** Reads student information from a specified file. The file must be in a tabular format with columns separated by tabs.
+### 4. Brand and Car Classes
+- `Brand` class represents a car brand with attributes like brand ID, name, sound brand, and price.
+- `BrandList` class extends `ArrayList<Brand>` and provides operations for loading, saving, searching, adding, and updating brands.
+- `Car` class represents a car with attributes like car ID, brand, color, frame ID, and engine ID.
+- `CarList` class extends `ArrayList<Car>` and provides operations for loading, saving, searching, adding, and updating cars.
 
-## License
+### 5. Menu Class
+The `Menu` class handles user input for menu options and brand selection.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. Feel free to modify and use it according to your needs.
+## Notes
+- The program uses text files (`brands.txt` and `cars.txt`) to store brand and car data.
+- Brands and cars are displayed in a structured manner, and the program ensures unique IDs for each brand and car.
+
+Feel free to explore and modify the code according to your needs. If you encounter any issues or have suggestions for improvement, please let me know.
